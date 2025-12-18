@@ -1,7 +1,7 @@
 services:
   
   express_app:
-    image: winterlyembrace/express_app
+    image: winterlyembrace/express_app:latest
     ports:
       - 8080:8080
 
