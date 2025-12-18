@@ -1,0 +1,16 @@
+services:
+  
+  express_app:
+    image: winterlyembrace/express_app
+    ports:
+      - 8080:8080
+
+  
+  watchtower:
+    image: containrrr/watchtower:latest
+    environment:
+      - WATCHTOWER_POLL_INTERVAL=61 # Poll every 60 seconds
+      - DOCKER_API_VERSION=1.44
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    container_name: watchtower
